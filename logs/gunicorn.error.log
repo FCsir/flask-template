@@ -1,0 +1,664 @@
+[2021-09-26 15:47:59 +0800] [29528] [DEBUG] Current configuration:
+  config: gunicorns.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 10
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 5
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/farman/app/Gtrading-BianServer
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: ./logs/gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: manage:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f740a4a45e0>
+  on_reload: <function OnReload.on_reload at 0x7f740a4a4700>
+  when_ready: <function WhenReady.when_ready at 0x7f740a4a4820>
+  pre_fork: <function Prefork.pre_fork at 0x7f740a4a4940>
+  post_fork: <function Postfork.post_fork at 0x7f740a4a4a60>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f740a4a4b80>
+  worker_int: <function WorkerInt.worker_int at 0x7f740a4a4ca0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f740a4a4dc0>
+  pre_exec: <function PreExec.pre_exec at 0x7f740a4a4ee0>
+  pre_request: <function PreRequest.pre_request at 0x7f740a4bb040>
+  post_request: <function PostRequest.post_request at 0x7f740a4bb0d0>
+  child_exit: <function ChildExit.child_exit at 0x7f740a4bb1f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f740a4bb310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f740a4bb430>
+  on_exit: <function OnExit.on_exit at 0x7f740a4bb550>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-26 15:47:59 +0800] [29528] [INFO] Starting gunicorn 20.1.0
+[2021-09-26 15:47:59 +0800] [29528] [DEBUG] Arbiter booted
+[2021-09-26 15:47:59 +0800] [29528] [INFO] Listening at: http://0.0.0.0:5001 (29528)
+[2021-09-26 15:47:59 +0800] [29528] [INFO] Using worker: gevent
+[2021-09-26 15:47:59 +0800] [29530] [INFO] Booting worker with pid: 29530
+[2021-09-26 15:47:59 +0800] [29531] [INFO] Booting worker with pid: 29531
+[2021-09-26 15:47:59 +0800] [29530] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:47:59 +0800] [29530] [INFO] Worker exiting (pid: 29530)
+[2021-09-26 15:47:59 +0800] [29531] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:47:59 +0800] [29531] [INFO] Worker exiting (pid: 29531)
+[2021-09-26 15:48:41 +0800] [29532] [DEBUG] Current configuration:
+  config: gunicorns.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 10
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 5
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: True
+  sendfile: None
+  reuse_port: False
+  chdir: /home/farman/app/Gtrading-BianServer
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: ./logs/gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: manage:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f07603c35e0>
+  on_reload: <function OnReload.on_reload at 0x7f07603c3700>
+  when_ready: <function WhenReady.when_ready at 0x7f07603c3820>
+  pre_fork: <function Prefork.pre_fork at 0x7f07603c3940>
+  post_fork: <function Postfork.post_fork at 0x7f07603c3a60>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f07603c3b80>
+  worker_int: <function WorkerInt.worker_int at 0x7f07603c3ca0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f07603c3dc0>
+  pre_exec: <function PreExec.pre_exec at 0x7f07603c3ee0>
+  pre_request: <function PreRequest.pre_request at 0x7f07603db040>
+  post_request: <function PostRequest.post_request at 0x7f07603db0d0>
+  child_exit: <function ChildExit.child_exit at 0x7f07603db1f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f07603db310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f07603db430>
+  on_exit: <function OnExit.on_exit at 0x7f07603db550>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-26 15:48:41 +0800] [29532] [INFO] Starting gunicorn 20.1.0
+[2021-09-26 15:48:41 +0800] [29532] [DEBUG] Arbiter booted
+[2021-09-26 15:48:41 +0800] [29532] [INFO] Listening at: http://0.0.0.0:5001 (29532)
+[2021-09-26 15:48:41 +0800] [29532] [INFO] Using worker: gevent
+[2021-09-26 15:48:41 +0800] [29534] [INFO] Booting worker with pid: 29534
+[2021-09-26 15:48:41 +0800] [29535] [INFO] Booting worker with pid: 29535
+[2021-09-26 15:48:41 +0800] [29534] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:48:41 +0800] [29534] [INFO] Worker exiting (pid: 29534)
+[2021-09-26 15:48:41 +0800] [29535] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:48:41 +0800] [29535] [INFO] Worker exiting (pid: 29535)
+[2021-09-26 15:48:41 +0800] [29536] [INFO] Booting worker with pid: 29536
+[2021-09-26 15:48:41 +0800] [29532] [WARNING] Worker with pid 29535 was terminated due to signal 15
+[2021-09-26 15:48:41 +0800] [29536] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:48:41 +0800] [29536] [INFO] Worker exiting (pid: 29536)
+[2021-09-26 15:49:03 +0800] [29537] [DEBUG] Current configuration:
+  config: gunicorns.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 10
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 5
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: True
+  sendfile: None
+  reuse_port: False
+  chdir: /home/farman/app/Gtrading-BianServer
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: ./logs/gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: manage:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f361db735e0>
+  on_reload: <function OnReload.on_reload at 0x7f361db73700>
+  when_ready: <function WhenReady.when_ready at 0x7f361db73820>
+  pre_fork: <function Prefork.pre_fork at 0x7f361db73940>
+  post_fork: <function Postfork.post_fork at 0x7f361db73a60>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f361db73b80>
+  worker_int: <function WorkerInt.worker_int at 0x7f361db73ca0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f361db73dc0>
+  pre_exec: <function PreExec.pre_exec at 0x7f361db73ee0>
+  pre_request: <function PreRequest.pre_request at 0x7f361db8b040>
+  post_request: <function PostRequest.post_request at 0x7f361db8b0d0>
+  child_exit: <function ChildExit.child_exit at 0x7f361db8b1f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f361db8b310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f361db8b430>
+  on_exit: <function OnExit.on_exit at 0x7f361db8b550>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-26 15:49:03 +0800] [29537] [INFO] Starting gunicorn 20.1.0
+[2021-09-26 15:49:03 +0800] [29537] [DEBUG] Arbiter booted
+[2021-09-26 15:49:03 +0800] [29537] [INFO] Listening at: http://0.0.0.0:5001 (29537)
+[2021-09-26 15:49:03 +0800] [29537] [INFO] Using worker: gevent
+[2021-09-26 15:49:03 +0800] [29539] [INFO] Booting worker with pid: 29539
+[2021-09-26 15:49:04 +0800] [29540] [INFO] Booting worker with pid: 29540
+[2021-09-26 15:49:04 +0800] [29539] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:49:04 +0800] [29539] [INFO] Worker exiting (pid: 29539)
+[2021-09-26 15:49:04 +0800] [29541] [INFO] Booting worker with pid: 29541
+[2021-09-26 15:49:04 +0800] [29540] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:49:04 +0800] [29540] [INFO] Worker exiting (pid: 29540)
+[2021-09-26 15:49:04 +0800] [29541] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:49:04 +0800] [29541] [INFO] Worker exiting (pid: 29541)
+[2021-09-26 15:49:41 +0800] [29542] [DEBUG] Current configuration:
+  config: gunicorns.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 10
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 5
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: True
+  sendfile: None
+  reuse_port: False
+  chdir: /home/farman/app/Gtrading-BianServer
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: ./logs/gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: manage:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f91236435e0>
+  on_reload: <function OnReload.on_reload at 0x7f9123643700>
+  when_ready: <function WhenReady.when_ready at 0x7f9123643820>
+  pre_fork: <function Prefork.pre_fork at 0x7f9123643940>
+  post_fork: <function Postfork.post_fork at 0x7f9123643a60>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9123643b80>
+  worker_int: <function WorkerInt.worker_int at 0x7f9123643ca0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f9123643dc0>
+  pre_exec: <function PreExec.pre_exec at 0x7f9123643ee0>
+  pre_request: <function PreRequest.pre_request at 0x7f912365b040>
+  post_request: <function PostRequest.post_request at 0x7f912365b0d0>
+  child_exit: <function ChildExit.child_exit at 0x7f912365b1f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f912365b310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f912365b430>
+  on_exit: <function OnExit.on_exit at 0x7f912365b550>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-26 15:49:42 +0800] [29542] [INFO] Starting gunicorn 20.1.0
+[2021-09-26 15:49:42 +0800] [29542] [DEBUG] Arbiter booted
+[2021-09-26 15:49:42 +0800] [29542] [INFO] Listening at: http://0.0.0.0:5001 (29542)
+[2021-09-26 15:49:42 +0800] [29542] [INFO] Using worker: gevent
+[2021-09-26 15:49:42 +0800] [29544] [INFO] Booting worker with pid: 29544
+[2021-09-26 15:49:42 +0800] [29545] [INFO] Booting worker with pid: 29545
+[2021-09-26 15:49:42 +0800] [29544] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:49:42 +0800] [29544] [INFO] Worker exiting (pid: 29544)
+[2021-09-26 15:49:42 +0800] [29546] [INFO] Booting worker with pid: 29546
+[2021-09-26 15:49:42 +0800] [29547] [INFO] Booting worker with pid: 29547
+[2021-09-26 15:49:42 +0800] [29545] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:49:42 +0800] [29545] [INFO] Worker exiting (pid: 29545)
+[2021-09-26 15:49:42 +0800] [29542] [DEBUG] 4 workers
+[2021-09-26 15:49:42 +0800] [29542] [WARNING] Worker with pid 29545 was terminated due to signal 15
+[2021-09-26 15:49:42 +0800] [29546] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:49:42 +0800] [29546] [INFO] Worker exiting (pid: 29546)
+[2021-09-26 15:49:42 +0800] [29547] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:49:42 +0800] [29547] [INFO] Worker exiting (pid: 29547)
+[2021-09-26 15:50:38 +0800] [29660] [DEBUG] Current configuration:
+  config: gunicorns.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 10
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 5
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: True
+  sendfile: None
+  reuse_port: False
+  chdir: /home/farman/app/Gtrading-BianServer
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: ./logs/gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: manage:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f43573f35e0>
+  on_reload: <function OnReload.on_reload at 0x7f43573f3700>
+  when_ready: <function WhenReady.when_ready at 0x7f43573f3820>
+  pre_fork: <function Prefork.pre_fork at 0x7f43573f3940>
+  post_fork: <function Postfork.post_fork at 0x7f43573f3a60>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f43573f3b80>
+  worker_int: <function WorkerInt.worker_int at 0x7f43573f3ca0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f43573f3dc0>
+  pre_exec: <function PreExec.pre_exec at 0x7f43573f3ee0>
+  pre_request: <function PreRequest.pre_request at 0x7f435740b040>
+  post_request: <function PostRequest.post_request at 0x7f435740b0d0>
+  child_exit: <function ChildExit.child_exit at 0x7f435740b1f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f435740b310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f435740b430>
+  on_exit: <function OnExit.on_exit at 0x7f435740b550>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-26 15:50:39 +0800] [29660] [INFO] Starting gunicorn 20.1.0
+[2021-09-26 15:50:39 +0800] [29660] [DEBUG] Arbiter booted
+[2021-09-26 15:50:39 +0800] [29660] [INFO] Listening at: http://0.0.0.0:5001 (29660)
+[2021-09-26 15:50:39 +0800] [29660] [INFO] Using worker: gevent
+[2021-09-26 15:50:39 +0800] [29662] [INFO] Booting worker with pid: 29662
+[2021-09-26 15:50:39 +0800] [29663] [INFO] Booting worker with pid: 29663
+[2021-09-26 15:50:39 +0800] [29664] [INFO] Booting worker with pid: 29664
+[2021-09-26 15:50:39 +0800] [29662] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:50:39 +0800] [29662] [INFO] Worker exiting (pid: 29662)
+[2021-09-26 15:50:39 +0800] [29663] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:50:39 +0800] [29663] [INFO] Worker exiting (pid: 29663)
+[2021-09-26 15:50:39 +0800] [29665] [INFO] Booting worker with pid: 29665
+[2021-09-26 15:50:39 +0800] [29664] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:50:39 +0800] [29664] [INFO] Worker exiting (pid: 29664)
+[2021-09-26 15:50:39 +0800] [29660] [DEBUG] 4 workers
+[2021-09-26 15:50:39 +0800] [29660] [WARNING] Worker with pid 29663 was terminated due to signal 15
+[2021-09-26 15:50:39 +0800] [29660] [WARNING] Worker with pid 29664 was terminated due to signal 15
+[2021-09-26 15:50:39 +0800] [29665] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 144, in init_process
+    self.patch()
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 43, in patch
+    sockets.append(socket.socket(s.FAMILY, socket.SOCK_STREAM,
+  File "/home/farman/.bian_venv/lib/python3.8/site-packages/gevent/_socket3.py", line 133, in __init__
+    self._sock = self._gevent_sock_class(family, type, proto, fileno)
+OSError: [Errno 92] Protocol not available
+[2021-09-26 15:50:39 +0800] [29665] [INFO] Worker exiting (pid: 29665)
